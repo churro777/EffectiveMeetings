@@ -28,8 +28,6 @@ app.get('/', function(request, response) {
   response.render('pages/index');
 });
 
-app.get('/notes', noteController.getNotes);
-
 app.post('/createUser', userController.createUser)
 app.post('/login', userController.login)
 
