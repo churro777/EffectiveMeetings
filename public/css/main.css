@@ -1,0 +1,14 @@
+html, #holdAll, #holdAllRow, #sideMenu, #content {
+    height: 100%;
+}
+
+#sideMenu {
+    background-color: lightgray;
+    /*min-height: 100%;
+    height: 100%;*/
+}
+
+#content {
+    /*min-height: 100%;
+    height: 100%;*/
+}
