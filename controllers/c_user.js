@@ -7,6 +7,10 @@ function createUser(req, res){
     var password = req.body.password;
     pool.query(query, [username, password], function(err, res2) {
         if (err) {
+            if (err.code == 23505) {
+                res.statusCode = 400;
+                res.end('Account not created. Username already exists');
+            }
             console.log(err.stack)
         } else {
             console.log("created new user: u: " + username);

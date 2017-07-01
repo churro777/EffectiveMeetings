@@ -94,24 +94,31 @@
         </form>
     </div>
     <hr>
-    <!-- event tests -->
+    <!-- agenda tests -->
     <div class="row">
-        <form class="col-xs-4" action="createEvent" method="post">
-            <h3>createEvent - post</h3>
+        <form class="col-xs-4" action="addAgendaItem" method="post">
+            <h3>addAgendaItem - post</h3>
             <div class="form-group">
-                <label for="">Date</label>
-                <input type="date" name="eventDate">
+                <label for="">note_id</label>
+                <input type="number" name="note_id">
             </div>
             <div class="form-group">
-                <label for="">Start Time</label>
-                <input type="time" name="startTime">
+                <label for="">Item</label>
+                <input type="text" name="item">
             </div>
             <div class="form-group">
-                <label for="">Title</label>
-                <input type="text" name="eventTitle">
+                <button type="submit">Add Agenda Item</button>
+            </div>
+        </form>
+
+        <form class="col-xs-4" action="getAgendaItems" method="get">
+            <h3>getAgendaItems - get</h3>
+            <div class="form-group">
+                <label for="">note_id</label>
+                <input type="number" name="note_id">
             </div>
             <div class="form-group">
-                <button type="submit">Create Event</button>
+                <button type="submit">Get Agenda Item</button>
             </div>
         </form>
     </div>

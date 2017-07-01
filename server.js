@@ -3,7 +3,6 @@ var app = express();
 
 // controllers
 var agendaController = require('./controllers/c_agenda.js');
-var eventController = require('./controllers/c_event.js');
 var noteController = require('./controllers/c_note.js');
 var userController = require('./controllers/c_user.js');
 
@@ -35,12 +34,12 @@ app.get('/test', function(request, response) {
 app.post('/createUser', userController.createUser)
 app.post('/login', userController.login)
 
-app.post('/createNote', noteController.createNote)
+app.get('/createNote', noteController.createNote)
 app.get('/getNotes', noteController.getNotes)
-app.post('/updateNote', noteController.updateNote)
+app.get('/updateNote', noteController.updateNote)
 
-app.post('/createEvent', eventController.createEvent)
-
+app.get('/addAgendaItem', agendaController.addAgendaItem)
+app.get('/getAgendaItems', agendaController.getAgendaItems)
 
 
 app.listen(app.get('port'), function() {

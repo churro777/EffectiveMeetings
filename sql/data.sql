@@ -1,4 +1,4 @@
-DROP TABLE person_event; DROP TABLE event; DROP TABLE agenda; DROP TABLE note; DROP TABLE person;
+DROP TABLE agenda; DROP TABLE note; DROP TABLE person;
 
 CREATE TABLE person(
     id              SERIAL          PRIMARY KEY,
@@ -20,18 +20,6 @@ CREATE TABLE agenda(
     item            VARCHAR(200)
 );
 
-CREATE TABLE event(
-    id              SERIAL          PRIMARY KEY,
-    eventDate       DATE,
-    startTime       TIME,
-    eventName       VARCHAR(150)
-);
-
-CREATE TABLE person_event(
-    id              SERIAL          PRIMARY KEY,
-    user_id         INT             REFERENCES person(id),
-    event_id        INT             REFERENCES event(id)
-);
 
 CREATE USER tony WITH PASSWORD 'super3005';
 GRANT SELECT, INSERT, UPDATE ON ALL TABLES IN SCHEMA public TO tony;
