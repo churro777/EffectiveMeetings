@@ -6,9 +6,9 @@
     "node": "6.10.2",
     "npm": "3.10.10"
   },
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "body-parser": "^1.17.2",
