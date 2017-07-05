@@ -11,3 +11,5 @@ INSERT INTO note (person_id, title, creationDate, content) VALUES
 'Sunday June 24',
 CURRENT_DATE,
 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.');
+
+-- INSERT INTO agenda(id, )

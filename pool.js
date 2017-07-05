@@ -3,16 +3,16 @@ const pg = require('pg');
 
 
 var config = {
-    // user: 'tony',
-    // host: 'localhost',
-    // database: 'test',
-    // password: 'super3005',
+    user: 'tony',
+    host: 'localhost',
+    database: 'test',
+    password: 'super3005',
 
-    host: 'ec2-107-20-226-93.compute-1.amazonaws.com',
-    database: 'd53jbk6vf5dg1g',
-    User: 'nuqewjsmmzkatz',
-    Port: '5432',
-    Password: 'cf19ac012c68e7b1cf60534e71399e289d866e386ed7b34c560b96492c17250d',
+    // host: 'ec2-107-20-226-93.compute-1.amazonaws.com',
+    // database: 'd53jbk6vf5dg1g',
+    // User: 'nuqewjsmmzkatz',
+    // Port: '5432',
+    // Password: 'cf19ac012c68e7b1cf60534e71399e289d866e386ed7b34c560b96492c17250d',
 
     port: 5432,
     max: 10, // max number of clients in the pool
