@@ -2,8 +2,8 @@ DROP TABLE agenda; DROP TABLE note; DROP TABLE person;
 
 CREATE TABLE person(
     id              SERIAL          PRIMARY KEY,
-    username        VARCHAR(50)     UNIQUE,
-    password        VARCHAR(100)
+    username        VARCHAR(50)     UNIQUE          NOT NULL,
+    password        VARCHAR(100)                    NOT NULL
 );
 
 CREATE TABLE note(

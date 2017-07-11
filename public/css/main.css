@@ -1,8 +1,13 @@
-html, #holdAll, #holdAllRow, #sideMenu, #contentContainer {
+html,
+#holdAll,
+#holdAllRow,
+#sideMenu,
+#contentContainer {
     height: 100%;
 }
 
-html, body {
+html,
+body {
     overflow: hidden;
 }
 
@@ -32,6 +37,14 @@ html, body {
 
 #newNote {
     background-color: darkgray;
+    color: black;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    text-decoration: none;
+}
+
+#newNote:hover {
+    text-decoration: none;
 }
 
 #contentContainer {
@@ -70,4 +83,15 @@ html, body {
     padding: 2em;
     resize: none;
     outline: none;
+}
+
+.noteLink {
+    padding-bottom: .5em;
+    padding-top: .5em;
+    text-align: center;
+    color: black;
+}
+
+.noteLink:hover {
+    text-decoration: none;
 }

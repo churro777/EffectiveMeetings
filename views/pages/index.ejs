@@ -7,8 +7,9 @@
 
 <body id="holdAll" class="container-fluid" onload="setup()">
 
-    <!-- <div id="loginRow" class="row">
-        <form id="login" class="col-xs-6 col-xs-offset-3" action="login" method="post">
+<!--    hidden when the user creates an account or logs in successfully-->
+    <div id="loginRow" class="row">
+        <div id="login" class="col-xs-6 col-xs-offset-3">
             <div class="form-group">
                 <label for="username">Username:</label>
                 <input type="text" name="username" class="form-control" id="username">
@@ -17,20 +18,21 @@
                 <label for="pwd">Password:</label>
                 <input type="password" name="password" class="form-control" id="password">
             </div>
-            <button type="submit" class="btn btn-default floatRight">Submit</button>
-        </form>
-    </div> -->
+            <button type="submit" class="btn btn-default floatRight" onclick="login()">Login</button>
+            
+            <button type="submit" class="btn btn-default" onclick="createAccount()">Create Account</button>
+        </div>
+    </div>
 
     <div id="holdAllRow" class="row">
         <div id="sideMenu" class="col-xs-1">
             <div class="row">
                 <div id="holdNotes" class="col-xs-12">
-                    holds notes
                 </div>
             </div>
 
             <div class="row">
-                <div id="newNote" class="col-xs-12 space-2">New Note</div>
+                <a id="newNote" class="col-xs-12 space-2" href="#" onclick="newNote()">New Note</a>
             </div>
 
 
@@ -51,7 +53,7 @@
                         </div> -->
                     <!-- content -->
                     <div id="content" class="row">
-                        <textarea id="contentText" class="col-xs-12" style="height:100%; border:none;padding: 2em;" placeholder="Type some notes..."></textarea>
+                        <textarea id="contentText" class="col-xs-12" style="height:100%; border:none;padding: 2em;" placeholder="Type some notes..." onkeydown="updateNote()"></textarea>
                     </div>
                 </div>
                 <div class="col-xs-3">

@@ -31,11 +31,13 @@ app.get('/test', function(request, response) {
     response.render('pages/test');
 });
 
-app.post('/createUser', userController.createUser)
-app.post('/login', userController.login)
+
+app.get('/createUser', userController.createUser)
+app.get('/login', userController.login)
 
 app.get('/createNote', noteController.createNote)
 app.get('/getNotes', noteController.getNotes)
+app.get('/getSingleNote', noteController.getSingleNote)
 app.get('/updateNote', noteController.updateNote)
 
 app.get('/addAgendaItem', agendaController.addAgendaItem)

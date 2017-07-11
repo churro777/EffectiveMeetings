@@ -1,10 +1,13 @@
 // create user
 function createUser(req, res){
     const pool = require('../pool.js');
+    
+//    console.log(req.query)
+//    console.log(req.params)
 
     var query = 'INSERT INTO person (username, password) VALUES ($1, $2);';
-    var username = req.body.username;
-    var password = req.body.password;
+    var username = req.query.username;
+    var password = req.query.password;
     pool.query(query, [username, password], function(err, res2) {
         if (err) {
             if (err.code == 23505) {
@@ -24,8 +27,8 @@ function login(req, res){
     const pool = require('../pool.js');
 
     var query = 'SELECT * FROM person WHERE username = $1 AND password = $2';
-    var username = req.body.username;
-    var password = req.body.password;
+    var username = req.query.username;
+    var password = req.query.password;
     pool.query(query, [username, password], function(err, res2) {
         if (err) {
             console.log(err.stack)
