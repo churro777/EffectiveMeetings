@@ -1,11 +1,13 @@
 // add item to agenda
 function addAgendaItem(req, res){
     const pool = require('../pool.js');
-
+    
+    console.log(req.query)
+    
     var query = 'INSERT INTO agenda (note_id, item) ' +
                 'VALUES ((SELECT id FROM note WHERE id = $1), $2);';
-    var note_id = req.body.note_id;
-    var item = req.body.item;
+    var note_id = req.query.id;
+    var item = req.query.item;
     pool.query(query, [note_id, item], function(err, res2) {
         console.log(err);
         if (err) {
@@ -25,8 +27,8 @@ function addAgendaItem(req, res){
 function getAgendaItems(req, res){
     const pool = require('../pool.js');
 
-    var query = 'SELECT * FROM agenda WHERE note_id = (SELECT id FROM note WHERE note_id = $1)';
-    var note_id = req.query.note_id;
+    var query = 'SELECT * FROM agenda WHERE note_id = $1';
+    var note_id = req.query.id;
     pool.query(query, [note_id], function(err, res2) {
         if (err) {
             console.log(err.stack)

@@ -7,7 +7,7 @@
 
 <body id="holdAll" class="container-fluid" onload="setup()">
 
-<!--    hidden when the user creates an account or logs in successfully-->
+    <!--    hidden when the user creates an account or logs in successfully-->
     <div id="loginRow" class="row">
         <div id="login" class="col-xs-6 col-xs-offset-3">
             <div class="form-group">
@@ -19,7 +19,7 @@
                 <input type="password" name="password" class="form-control" id="password">
             </div>
             <button type="submit" class="btn btn-default floatRight" onclick="login()">Login</button>
-            
+
             <button type="submit" class="btn btn-default" onclick="createAccount()">Create Account</button>
         </div>
     </div>
@@ -40,7 +40,9 @@
         <div id="contentContainer" class="col-xs-11">
             <!-- logo -->
             <div id="logo" class="row">
-                <div class="col-xs-12 center">EFFECTIVE MEETINGS</div>
+                <div class="col-xs-10 center">EFFECTIVE MEETINGS</div><!-- change back to 12 after testing -->
+                <div class="col-xs-1 center" onclick="displayAgenda()">displayAgenda</div>
+                <div class="col-xs-1 center" onclick="cleanupAgenda()">cleanupAgenda</div>
             </div>
 
             <div class="row">
@@ -62,16 +64,15 @@
                         <div class="col-xs-12">
                             <div class="row">
                                 <div class="col-xs-9">
-                                    <input class="col-xs-12 form-control" type="text" name="newAgendaItem">
+                                    <input class="col-xs-12 form-control" type="text" name="newAgendaItem" id="newAgendaItem">
                                 </div>
                                 <div class="col-xs-3" style="padding-left:0">
-                                    <button class="btn btn-default" type="button" name="addAgendaItem">Add</button>
+                                    <button class="btn btn-default" type="button" name="addAgendaItem" onclick="addAgendaItem()">Add</button>
                                 </div>
                             </div>
                             <div class="row space-2">
                                 <div class="col-xs-12">
-                                    <ul>
-                                        <li>Item</li>
+                                    <ul id="agendaItemsList">
                                     </ul>
                                 </div>
                             </div>
